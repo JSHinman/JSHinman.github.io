@@ -2,18 +2,27 @@ body {
 
 }
 
+
+
 a {
     color: white;
-    background-color: black;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;   
-    font-family: sans-serif;
+    background-color: black;    
+    margin: auto;
+    margin-right: 10px;
+    font-size: 16px;
+    text-decoration:none;
 }
 
-button {
-    color: white;
-    background-color: black;
+#header {
+    background-color: Black;
+    margin: auto;
+    height: 20px;
+}
+
+#back {
     padding: 10px;
-    font-size: 16px;
+}
+
+#mainTitle {
+    text-decoration: underline;
 }
