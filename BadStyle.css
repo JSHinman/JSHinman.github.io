@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    background-color: darkgoldenrod;
+}
+
+
+
+a {
+    color: white;
+    background-color: orange;    
+    margin: auto;
+    font-size: 16px;
+    text-decoration:none;
+}
+
+#header {
+    background-color: green;
+    margin: auto;
+    height: auto;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    
+}
+
+#back {
+    padding: 10px;
+}
+
+nav {
+    background-color: purple;
+    height: 27px;
+}
+
+nav a {
+    padding: 10px;
+}
+
+nav a:hover{
+    background-color: red;
+}
+
+.badColorButton:hover {
+    background-color: yellow;
+}
+
+
+
+#mainTitle {
+    text-decoration: underline;
+}
