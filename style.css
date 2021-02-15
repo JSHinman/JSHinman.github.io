@@ -1,26 +1,67 @@
 body {
     font-family: sans-serif;
-    background-color: #FF6766;
+    background-color: #5CDB95;
+    font-family: 'Montserrat';
+    color: midnightblue;
 }
 
 
 
 a {
     color: white;
-    background-color: black;    
+    background-color: #05386B;    
     margin: auto;
     font-size: 16px;
     text-decoration:none;
+    border-radius: 20px;
+}
+
+a:hover {
+    background-color: #0946b9;
+}
+
+
+#mainParagraph p {
+    font-size: 2em;
+    margin-bottom: 0px;
+}
+
+#mainParagraph {
+    padding: 3em;
+    padding-top: 10em;
+}
+
+ .facts {
+     margin-top: 0px;
+     font-size: 1.5em;
+}
+
+.name {
+    color: white;
+    font-weight: bold;
+}
+
+span {
+    color:white;
+}
+
+#mainParagraph a {
+    padding: 10px;
 }
 
 #header {
-    background-color: Black;
+    background-color: #5CDB95;
     margin: auto;
     height: auto;
-    color: white;
-    text-align: center;
-    font-size: 3em;
+    font-size: 1.5em;
     width: 100%;
+    float: left;
+    color: #05386B;
+    font-weight: bold;
+}
+
+#header img {
+    width: 7%;
 }
 
 #back {
@@ -28,21 +69,15 @@ a {
 }
 
 nav {
-    background-color: black;
+    background-color: #5CDB95;
     height: 27px;
+    float: right;
 }
 
 nav a {
     padding: 10px;
 }
 
-nav a:hover{
-    background-color: darkgrey;
-}
-
-.badColorButton:hover {
-    background-color: yellow;
-}
 
 
 
@@ -50,27 +85,14 @@ nav a:hover{
     text-decoration: underline;
 }
 
-div.guitarImg {
-    display: none;
-}
-
-a.guitarLink:hover + div.guitarImg {
-    display: block;
-}
-
-a.guitarLink {
-    background: none!important;
-    border: none;
-    padding: 0!important;   
-    font-weight: bold;
-    font-size: 15.5px;
-    color: black;
-}
 
 footer {
     background-color: black;
     color: white;
 }   
+
+
+
 
 
 
