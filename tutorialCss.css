@@ -1,0 +1,53 @@
+body {
+    font-family: "Montserrat";
+    background-color: #5CDB95;
+    color: midnightblue;
+}
+.sideBar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: midnightblue;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: white;
+}
+
+.closebtn:hover {
+    color: #0946B9
+}
+.example {
+    padding-left: 10px;
+}
+
+.sideBar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+#sideLinks a:hover {
+  background-color: #0946b9;
+}
+
+.sideBar .closebtn {
+  top: 0;
+  right: 8px;
+  font-size: 24px;
+  position: absolute;
+}
+
+
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+

@@ -1,27 +1,77 @@
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="tutorialCss.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <title>
             Tutorial Index
         </title>
     </head>
-    <body>
-        <div id="header">Code Tutorials <nav>
-        <a href="index.html">Main Menu</a> 
-        <a href="BadColorScheme.html" class="badColorButton">Bad Colour Scheme</a> 
-    </nav></div>
+    
+    
+    <body onload="openNav()">
+       
+        <!-- Vertical navbar -->
+        <div id="mySidebar" class="sidebar">
+            <h3 class="example" id="titleHide">Examples</h3>
+            <a href="javascript:void(0)" class="closebtn" onclick="openORclose()">☰</a>
+            <section id="sideLinks">
+                <a href="ImageExample.html">Image</a>
+                <a href="JavascriptDate.html">Date</a>
+            </section>
+        </div>
+
+<!-- Main Body, has all my text -->
+<div id="main"> 
+  <h2>Trying to figure out how this vertical navbar works.</h2>
+  <p><a href="index.html">Main Menu</a></p>
+</div>
+
         
         
+<!-- Javascript -->    
+<script>
+    var open = 1;
+    var x = document.getElementById("sideLinks");
+    var y = document.getElementById("titleHide");
+    
+    function openORclose() {
+        if (open == 1) {
+            closeNav();
+            open = 2;
+                
+        } else if (open == 2){
+            openNav()
+            open = 1;
+        }
+    }
+    
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+    x.style.display = "block";
+  y.style.display = "block";
+
+}
+    
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "50";
+  document.getElementById("main").style.marginLeft= "50";
+  setTimeout(hide(), 500)
+
+}
+
+function hide() {
+    x.style.display = "none";
+    y.style.display = "none";
+}
+    
+    
+</script>
         
-        
-    <div class="tutIndex"><ul>
-        <li>
-            <a href="ImageExample.html">Image Example</a>
-        </li> <br>  
-        <br><li>
-        <a href="JavascriptDate.html">Date Example</a>
-        </li></ul>
-    </div>
+    <!-- 
+  
+    
+-->
     </body>
 </html>
