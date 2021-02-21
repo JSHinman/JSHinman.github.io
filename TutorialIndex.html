@@ -9,7 +9,15 @@
     
     
     <body onload="openNav()">
-       
+        
+        <!-- Navbar at top and title -->
+        <div id="header"><div id="title">The Website</div><nav>
+        <a href="index.html">Menu</a> 
+        <a href="BadColorScheme.html" class="badColorButton">Bad Colour Scheme</a> 
+    </nav></div>  
+        
+        
+        
         <!-- Vertical navbar -->
         <div id="mySidebar" class="sidebar">
             <h3 class="example" id="titleHide">Examples</h3>
@@ -17,15 +25,28 @@
             <section id="sideLinks">
                 <a href="ImageExample.html">Image</a>
                 <a href="JavascriptDate.html">Date</a>
+                <a href="navBarExampleHTML.html">Navbar</a>
             </section>
         </div>
 
+        
+        
+        
 <!-- Main Body, has all my text -->
 <div id="main"> 
-  <h2>Trying to figure out how this vertical navbar works.</h2>
-  <p><a href="index.html">Main Menu</a></p>
+    <br><br>
+  <h2>Code Documentation</h2>
+    <p>Here is some code tutorials for when I forget how to do something.</p>
+  
+    
+    
+    
+    
 </div>
 
+        
+        
+        
         
         
 <!-- Javascript -->    
@@ -33,6 +54,7 @@
     var open = 1;
     var x = document.getElementById("sideLinks");
     var y = document.getElementById("titleHide");
+    var z = document.getElementById("title");
     
     function openORclose() {
         if (open == 1) {
@@ -46,10 +68,11 @@
     }
     
 function openNav() {
-  document.getElementById("mySidebar").style.width = "200px";
-  document.getElementById("main").style.marginLeft = "200px";
+    document.getElementById("mySidebar").style.width = "200";
+    document.getElementById("main").style.marginLeft = "200";
+    document.getElementById("title").style.marginLeft = "200";
     x.style.display = "block";
-  y.style.display = "block";
+    y.style.display = "block";
 
 }
     
@@ -57,21 +80,15 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "50";
   document.getElementById("main").style.marginLeft= "50";
-  setTimeout(hide(), 500)
+  document.getElementById("title").style.marginLeft = "50";
+  setTimeout(hide(), 500);
 
 }
 
 function hide() {
     x.style.display = "none";
     y.style.display = "none";
-}
-    
-    
+}   
 </script>
-        
-    <!-- 
-  
-    
--->
     </body>
 </html>

@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif;
-    background-color: darkgoldenrod;
+    background-image: url(images/lights.gif);
+    background-size: cover;
 }
 
 

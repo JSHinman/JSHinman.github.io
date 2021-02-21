@@ -50,4 +50,65 @@ body {
   padding: 16px;
 }
 
+nav a {
+    color: white;
+    background-color: #05386B;    
+    margin: 0px;
+    font-size: 16px;
+    text-decoration:none;
+    border-radius: 20px;
+    padding:10px;
+    
+}
+
+nav a:hover {
+    background-color: #0946b9;
+}
+
+#header {
+    background-color: #5CDB95;
+    margin: auto;
+    height: auto;
+    font-size: 1.5em;
+    width: 100%;
+    float: left;    
+    color: #05386B;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #5CDB95;
+    height: 27px;
+    float: right;
+}
+    
+#title {
+    transition: margin-left .5s;
+    float:left;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    display: block;
+    padding: 10px;
+}
+
+ul li a:hover {
+    background-color: orangered;
+}
+
+#bold {
+    font-weight: bold;
+}
 

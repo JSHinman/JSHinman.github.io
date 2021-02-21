@@ -1,23 +1,81 @@
 <html>
     <head>
         <title>Image Example</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="tutorialCss.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
-    <body>
-        <div id="header">Image Example<nav>
-        <a href="TutorialIndex.html">Tutorials</a> 
+    <body onload="openNav()">
+        
+        <!-- Navbar at top and title -->
+        <div id="header"><div id="title">The Website</div><nav>
+        <a href="index.html">Menu</a> 
         <a href="BadColorScheme.html" class="badColorButton">Bad Colour Scheme</a> 
-    </nav>
-            </div>
+    </nav></div>  
             
+        
+        <!-- Vertical navbar -->
+        <div id="mySidebar" class="sidebar">
+            <h3 class="example" id="titleHide">Examples</h3>
+            <a href="javascript:void(0)" class="closebtn" onclick="openORclose()">☰</a>
+            <section id="sideLinks">
+                <a href="TutorialIndex.html">Menu</a>
+                <a href="JavascriptDate.html">Date</a>
+                <a href="navBarExampleHTML.html">Navbar</a>
+            </section>
+        </div>
+
+        
+        <div id="main">
         <br><br>
         <p>This will show how to display an image.</p>
         <br>
         <img src="images/Car.PNG">
         <br>
-        <p>The tag to show an image is &lt;img&gt;. It is one of the only tags that doesn't need an ending.<br> To link an image to show, use src="yourImage.jpg". <br> The code used for this was &lt;img src="images/Car.PNG"&gt;</p>
+            <p>The tag to show an image is <code>&lt;img&gt;</code>. It is one of the only tags that doesn't need an ending.<br> To link an image to show, use <code>src="yourImage.jpg"</code>. <br> The code used for this was <code>&lt;img src="images/Car.PNG"&gt;</code></p>
         <br><br>
-        <a href="TutorialIndex.html" id="back">&#x2190; Back</a>
+             </div>
+        
+        
+        <!-- Javascript -->    
+<script>
+    var open = 1;
+    var x = document.getElementById("sideLinks");
+    var y = document.getElementById("titleHide");
+    var z = document.getElementById("title");
+    
+    function openORclose() {
+        if (open == 1) {
+            closeNav();
+            open = 2;
+                
+        } else if (open == 2){
+            openNav()
+            open = 1;
+        }
+    }
+    
+function openNav() {
+    document.getElementById("mySidebar").style.width = "200";
+    document.getElementById("main").style.marginLeft = "200";
+    document.getElementById("title").style.marginLeft = "200";
+    x.style.display = "block";
+    y.style.display = "block";
+
+}
+    
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "50";
+  document.getElementById("main").style.marginLeft= "50";
+  document.getElementById("title").style.marginLeft = "50";
+  setTimeout(hide(), 500);
+
+}
+
+function hide() {
+    x.style.display = "none";
+    y.style.display = "none";
+}   
+</script>
     </body>
 </html>

@@ -1,15 +1,106 @@
 <html>
     <head>
         <title>Navbar Example</title>
-        <link rel="stylesheet" href="navBarExample.css">
+        <link rel="stylesheet" href="tutorialCss.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
-    <body>
-        <ul>
-            <li><a href="index.html">main</a></li>
-            <li><a href="BadColorScheme.html">ok</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Inconspicuous Link</a></li>
-        </ul>
+    <body onload="openNav()">
         
-        here is some random stuff that i will finish when I get home
+        <!-- Navbar at top and title -->
+        <div id="header"><div id="title">The Website</div><nav>
+        <a href="index.html">Menu</a> 
+        <a href="BadColorScheme.html" class="badColorButton">Bad Colour Scheme</a> 
+    </nav></div>  
+        
+        <!-- Vertical navbar -->
+        <div id="mySidebar" class="sidebar">
+            <h3 class="example" id="titleHide">Examples</h3>
+            <a href="javascript:void(0)" class="closebtn" onclick="openORclose()">☰</a>
+            <section id="sideLinks">
+                <a href="TutorialIndex.html">Menu</a>
+                <a href="JavascriptDate.html">Date</a>
+                <a href="ImageExample.html">Image</a>
+            </section>
+        </div>
+        
+        
+        <!-- Main body-->
+        <div id="main"><br><ul>
+            <li><a href="index.html">Main</a></li>
+            <li><a href="BadColorScheme.html">Color</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Inconspicuous Link</a></li>
+            </ul> This is an example of a navbar. To make this I used a un-ordered list and some CSS. <br> THe code I used was : <br><div id="bold">HTML</div><br><code>&lt;ul&gt;<br>
+            &lt;li&gt;&lt;a href="index.html"&gt;Index 1&lt;/a&gt;&lt;/li&gt; <br>
+            &lt;li&gt;&lt;a href="index2.html"&gt;Index 2&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a href="index3.html"&gt;Index 3&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;/ul&gt;</code><br> <br>
+            <div id="bold">CSS</div>
+            <code>
+            ul { <br>
+            &nbsp;&nbsp;display: flex;<br>
+            } <br>
+<br>
+                li { <br>
+                &nbsp;&nbsp;list-style-type: none; <br>
+                }<br>
+<br>
+                ul li a { <br>
+                &nbsp;&nbsp;text-decoration: none;<br>
+                &nbsp;&nbsp;color: white;<br>
+                &nbsp;&nbsp;background-color: red;<br>
+                &nbsp;&nbsp;display: block;<br>
+                &nbsp;&nbsp;padding: 10px;<br>
+                }<br>
+<br>
+                ul li a:hover {<br>
+                &nbsp;&nbsp;background-color: orangered;<br>
+                    }<br>
+             </code>
+        </div>
+        
+        
+        
+<!-- Javascript -->    
+<script>
+    var open = 1;
+    var x = document.getElementById("sideLinks");
+    var y = document.getElementById("titleHide");
+    var z = document.getElementById("title");
+    
+    function openORclose() {
+        if (open == 1) {
+            closeNav();
+            open = 2;
+                
+        } else if (open == 2){
+            openNav()
+            open = 1;
+        }
+    }
+    
+function openNav() {
+    document.getElementById("mySidebar").style.width = "200";
+    document.getElementById("main").style.marginLeft = "200";
+    document.getElementById("title").style.marginLeft = "200";
+    x.style.display = "block";
+    y.style.display = "block";
+
+}
+    
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "50";
+  document.getElementById("main").style.marginLeft= "50";
+  document.getElementById("title").style.marginLeft = "50";
+  setTimeout(hide(), 500);
+
+}
+
+function hide() {
+    x.style.display = "none";
+    y.style.display = "none";
+}   
+</script>
+        
     </body>
 </html>
