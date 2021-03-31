@@ -6,7 +6,7 @@ body {
     font-family: 'Bebas Neue', cursive;
     font-size: 3.8em;
     color: white; 
-    margin-top: -54px;
+    margin-top: -4.8%;
     
 }
 
@@ -17,17 +17,27 @@ body {
     height: 12%;
     background-color: #344E41;
     color: white;   
+    transition: 0.5s;
 }
 
 #hamburgerIcon {
     background-color: #344E41;
     color: white;
-    font-size: 2.5em;
-    padding-left: 1%;
-    margin-top: 0.8%;
-    border: none;
+    font-size: 3em;
+    margin: 1%;    
+    text-decoration: none;
+    transition: 0.5s;
+    
 }
 
-#hamburgerIcon:active {
+#hamburgerIcon:hover {  
+    transition: 0.5s;
+    text-shadow: 1px 1px 7px black;
     
+}
+
+#navbar {
+    height: 100%;
+    width: 11.11%;
+    background-color: green;
 }
