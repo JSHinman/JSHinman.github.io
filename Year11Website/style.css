@@ -26,7 +26,7 @@ body {
     font-size: 3em;
     margin: 1%;    
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s;
     
 }
 
@@ -38,6 +38,34 @@ body {
 
 #navbar {
     height: 100%;
-    width: 11.11%;
-    background-color: green;
+    width: 0px;
+    background-color: #344E41;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+    white-space: nowrap;
 }
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', 'cursive';
+    font-size: 32px;
+}
+
+#navbar a:hover {
+    text-shadow: 1px 1px 7px black;
+    transition: 0.3s;
+    font-size: 35px;
+}
+
+#content {
+    transition: margin-left 0.3s;
+    font-family: Calibri;
+    font-size: 32px;
+    font-weight: 100;
+    color: #263826;
+}
+

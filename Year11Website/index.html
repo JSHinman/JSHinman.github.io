@@ -7,16 +7,29 @@
     </head>
     <body>
         <header id="header">
-            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openORclose()">☰</a>
+            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openClose()">☰</a>
             <center id="title">CBHS ROBOTICS</center>
         </header>
         
         
-        <div id="navbar">hello </div>
+        <div id="navbar">
+            <center>
+        <a href="">Home</a><br>
+        <a href="">Tutorials</a><br>
+        <a href="">The J Team</a>    
+            </center>
+        </div>
+        
+        
+        <div id="content">
+            VEX robotics is a robotics competition.
         
         
         
         
+        
+        
+        </div>
         
         
         
@@ -26,9 +39,30 @@
         
         
         <script>
-            void openORclose() {
-                x = 2;
+            navBarSection = document.getElementById("navbar");
+            contentSection = document.getElementById("content");
+            isOpen = false;
+            
+            function openClose() {
+                if (isOpen == false) {
+                    isOpen = true;
+                    openNav();
+                } else {
+                    isOpen = false;
+                    closeNav();
+                }
             }
+            
+            function openNav() {
+                navBarSection.style.width = "11.11%";
+                contentSection.style.marginLeft = "11.11%";    
+            }
+            
+            function closeNav() {
+                navBarSection.style.width = "0";
+                contentSection.style.marginLeft = "0";
+            }
+            
         </script>
     </body>
 </html>
