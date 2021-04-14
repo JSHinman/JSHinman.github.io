@@ -6,7 +6,7 @@ body {
     font-family: 'Bebas Neue', cursive;
     font-size: 3.8em;
     color: white; 
-    margin-top: -4.8%;
+    margin-top: -5.4%;
     
 }
 
@@ -46,6 +46,7 @@ body {
     overflow-x: hidden;
     transition: 0.3s;
     white-space: nowrap;
+    margin-top: -3px;
 }
 
 #navbar a {
@@ -57,8 +58,8 @@ body {
 
 #navbar a:hover {
     text-shadow: 1px 1px 7px black;
-    transition: 0.3s;
-    font-size: 35px;
+    transition: 0.23s;
+    font-size: 34px;
 }
 
 #content {
@@ -67,5 +68,24 @@ body {
     font-size: 32px;
     font-weight: 100;
     color: #263826;
+    background-color: #588157;
+    padding:10px;
+    
 }
 
+#carousel {
+    height:100px;
+    width:100px;
+}
+
+#activeButton a{
+    background-color: #19251F; 
+    padding-right: 49px;
+    padding-left: 48px;
+}
+
+#activeButton a:hover {
+    padding-left: 47px;
+    padding-right: 46px;
+    font-size: 34px;
+}
