@@ -11,14 +11,12 @@
  
         <title>CBHS Robotics</title>
     </head>
-    <body>
-        
+    <body onload="fixCarousel()">
         
         <header id="header">
             <a href="javascript:void(0)" id="hamburgerIcon" onclick="openClose()">☰</a>
-            <center id="title">CBHS ROBOTICS</center>
+            <span id="title">CBHS ROBOTICS</span>
         </header>
-        
         
         <div id="navbar">
             <center>
@@ -30,7 +28,11 @@
         
         
         <div id="content">
-            VEX robotics is a robotics competition.
+            <br><br><br>
+            <section id="textMainPage">
+            VEX robotics is a robotics competition that involves designing, building, coding and driving robots. Teams build their robot and are able to compete in the New Zealand National competition. Robotics at CBHS is held after school everyday until around 4:30pm in F10.     
+            </section>
+            <!-- Carousel -->
         <section id="carousel">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -59,6 +61,9 @@
             </a>
             </div>
             </section>
+            
+            
+            
         </div>
         
         
@@ -68,6 +73,9 @@
         <script>
             navBarSection = document.getElementById("navbar");
             contentSection = document.getElementById("content");
+            carousel = document.getElementById("carousel");
+            mainText = document.getElementById("textMainPage");
+            
             isOpen = false;
             
             function openClose() {
@@ -77,18 +85,27 @@
                 } else {
                     isOpen = false;
                     closeNav();
-                }
+               }
             }
             
             function openNav() {
-                navBarSection.style.width = "11.11%";
-                contentSection.style.marginLeft = "11.11%";    
+                    navBarSection.style.width = "150px";
+                    contentSection.style.marginLeft = "150px";
+                    mainText.style.marginRight = "10.07%";
             }
             
             function closeNav() {
                 navBarSection.style.width = "0";
                 contentSection.style.marginLeft = "0";
+                mainText.style.marginRight = "10.58%";
             }
+            
+            function fixCarousel() {
+                
+                mainText.style.marginRight = "10.58%";
+            }
+            
+
             
         </script>
     </body>

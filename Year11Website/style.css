@@ -5,28 +5,27 @@ body {
 #title {
     font-family: 'Bebas Neue', cursive;
     font-size: 3.8em;
-    color: white; 
-    margin-top: -5.4%;
-    
+    color: white;
 }
 
 #header {
-    margin-top: -7px;
-    margin-left: -8px;
-    width: 101.2%;
+    width: 100.5%;
     height: 12%;
     background-color: #344E41;
     color: white;   
     transition: 0.5s;
+    text-align: center;
 }
 
 #hamburgerIcon {
     background-color: #344E41;
     color: white;
-    font-size: 3em;
-    margin: 1%;    
+    font-size: 3em; 
+    margin-top: -0.01%;
+    margin-left: 13px;
     text-decoration: none;
     transition: 0.3s;
+    float: left;
     
 }
 
@@ -64,19 +63,75 @@ body {
 
 #content {
     transition: margin-left 0.3s;
-    font-family: Calibri;
-    font-size: 32px;
-    font-weight: 100;
-    color: #263826;
-    background-color: #588157;
     padding:10px;
     
 }
 
-#carousel {
-    height:100px;
-    width:100px;
+
+
+
+
+@media screen and (min-width: 751px) {
+    #textMainPage {
+    font-family: Calibri;
+    font-size: 2vw;
+    font-weight: 100;
+    color: #263826;
+    background-color: #588157;
+    float: right;
+    border-width: 2.25px;
+    border: #344E41;
+    border-style: solid;
+    padding: 5px;
+    width: 39.07%; 
+    transition: margin-right 0.3s;
 }
+    #carousel {
+    height: 21.89%; 
+    width: 39.07%;
+    transition: margin-left 0.3s;
+    margin-left: 4.6%;
+    
+}
+}
+
+@media screen and (max-width: 750px) {
+    #textMainPage {
+    font-family: Calibri;
+    font-size: 3vw;
+    font-weight: 100;
+    color: #263826;
+    background-color: #588157;
+    border-width: 2.25px;
+    border: #344E41;
+    border-style: solid;
+
+        
+    margin-left: 28%;    
+    padding: 5px;
+    width: 53.33%; 
+    transition: margin-right 0.3s;
+}
+    #carousel {
+    height: 30%; 
+    width: 53.33%;
+    transition: margin-left 0.3s;
+    margin-left: 28%;
+    
+}
+    #carousel::before {
+        content: "\a";
+        white-space: pre;
+    }
+}
+
+
+.carousel-inner {
+    border: #344E41;
+    border-style: solid;
+    border-width: 3px;
+}
+
 
 #activeButton a{
     background-color: #19251F; 
