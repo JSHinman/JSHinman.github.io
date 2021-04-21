@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+        
+ 
+        <title>CBHS Robotics</title>
+    </head>
+    <body onload="alignText()">
+        
+        <header id="header">
+            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openClose()">☰</a>
+            <span id="title">Learn To Code</span>
+        </header>
+        
+        <div id="navbar">
+            <center>
+        <a href="index.html">Home</a>
+        <section id="activeButtonTutorial"><a href="CodeTutotialTemplate.html">Tutorials</a></section>
+        <a href="">The J Team</a>    
+            </center>
+        </div>
+        
+        
+        <div id="content">
+            <br><br><br>
+            <h2 id="titleTutorials">Auton</h2>
+            <section id="textTutorialPage">
+            To set up code for autonomous, when you create a new code select competition mode. When you open the code, there should be an autonomous function. To set up code for autonomous, when you create a new code select competition mode. When you open the code, there should be an autonomous function. To set up code for autonomous, when you create a new code select competition mode. When you open the code, there should be an autonomous function.
+            </section><br>
+            <section id="code">
+                1. 
+            <br>2.
+            <br>3.
+            <br>4.
+            <br>5.
+            <br>6.
+            <br>7.
+            <br>8.
+            
+            </section>
+            
+            
+            
+        </div>
+        
+        
+        
+        
+            
+        <script>
+            navBarSection = document.getElementById("navbar");
+            contentSection = document.getElementById("content");
+            
+            isOpen = false;
+            
+            function openClose() {
+                if (isOpen == false) {
+                    isOpen = true;
+                    openNav();
+                } else {
+                    isOpen = false;
+                    closeNav();
+               }
+            }
+            
+            function openNav() {
+                    navBarSection.style.width = "150px";
+                    contentSection.style.marginLeft = "150px";
+            }
+            
+            function closeNav() {
+                navBarSection.style.width = "0";
+                contentSection.style.marginLeft = "7.2%";
+            }
+            
+            function alignText() {
+                contentSection.style.marginLeft = "7.2%";
+            }
+
+            
+        </script>
+    </body>
+</html>
