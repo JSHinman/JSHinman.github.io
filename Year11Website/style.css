@@ -9,7 +9,7 @@ body {
 }
 
 #header {
-    width: 100.5%;
+    width: 100%;
     height: 12%;
     background-color: #344E41;
     color: white;   
@@ -164,7 +164,7 @@ body {
 }
 
 #titleTutorials {
-    color: 141E14;
+    color: #141E14;
     font-family: 'Bebas Neue', cursive;
     text-decoration: underline;
 }
@@ -186,4 +186,22 @@ body {
     border-width: 2px;
     border: #344E41;
     border-style: solid;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#copyButton {
+    float:right;
+    color: #263826;
+    background-color: #588157;
+    border: #344E41;
+    border-style: solid; 
+    padding: 2px;
+}
+
+#copyButton:hover {
+    background-color: #698F57;
+}
+
+#noSelect {
+    user-select: none;
 }

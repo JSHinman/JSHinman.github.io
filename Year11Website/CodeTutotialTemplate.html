@@ -1,11 +1,14 @@
 <html>
     <head>
+        
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="bootstrap.min.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        
   
         
  
@@ -29,19 +32,19 @@
         
         <div id="content">
             <br><br><br>
-            <h2 id="titleTutorials">Auton</h2>
-            <section id="textTutorialPage">
-            To set up code for autonomous, when you create a new code select competition mode. When you open the code, there should be an autonomous function. To set up code for autonomous, when you create a new code select competition mode. When you open the code, there should be an autonomous function. To set up code for autonomous, when you create a new code select competition mode. When you open the code, there should be an autonomous function.
+            <h2 id="titleTutorials">Adding a motor</h2>
+            <section id="textTutorialPage" type="text">
+            To add a motor, you need to click on the Robot Configuration menu, which is at the top right of the screen next to the question mark. Then press Add a Device and select, motor. You can add any other sensor in this menu as well. Next, select the port number that you have plugged your motor into and name the motor. Usually, you would leave the gear cartridge settings unless you changed it inside the motor. After this, set it to either normal or reverse and press done. To spin the motor, the code would be: MotorName.spin(forward, 100, vex::velocityUnits::pct);. MotorName, you should change to the name of the motor that you set up earlier. Inside the brackets, there is the direction, then the power at which the motors would spin and what units the last number would be in, and in the case, percentage. Put this code inside the int main() function and below the vexCodeInit(). You then need to put it in a while loop so that the motor will keep spinning and set the while loop to keep spinning set the parameters to true(Make sure that true is lowercase). Your code should now look like this:
             </section><br>
             <section id="code">
-                1. 
-            <br>2.
-            <br>3.
-            <br>4.
-            <br>5.
-            <br>6.
-            <br>7.
-            <br>8.
+                <span id="noSelect">1.</span>&nbsp;int main() { <input type="image" src="images/clipboard.svg" onclick="copyText(Text)" id="copyButton"/>
+            <br><span id="noSelect">2.</span>&nbsp;&nbsp;&nbsp;&nbsp;// Initializing Robot Configuration. DO NOT REMOVE
+            <br><span id="noSelect">3.</span>&nbsp;&nbsp;&nbsp;&nbsp;vexcodeInit();
+            <br><span id="noSelect">4.</span>      
+            <br><span id="noSelect">5.</span>&nbsp;&nbsp;&nbsp;&nbsp;while(true) {
+            <br><span id="noSelect">6.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NameOfMotor.spin(forward, 100, vex::velocityUnits::pct);
+            <br><span id="noSelect">7.</span>&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br><span id="noSelect">8.</span>&nbsp;}
             
             </section>
             
@@ -56,6 +59,7 @@
         <script>
             navBarSection = document.getElementById("navbar");
             contentSection = document.getElementById("content");
+            var Text = "  int main() {\n      // Initializing Robot Configuration. DO NOT REMOVE\n      vexcodeInit();\n\n      while(true) {\n         NameOfMotor.spin(forward, 100, vex::velocityUnits::pct);\n      }\n   }"
             
             isOpen = false;
             
@@ -83,6 +87,15 @@
                 contentSection.style.marginLeft = "7.2%";
             }
 
+            
+            function copyText(text) {
+                const elem = document.createElement('textarea');
+                elem.value = text;
+                document.body.appendChild(elem);
+                elem.select();
+                document.execCommand('copy');
+                document.body.removeChild(elem);
+            }
             
         </script>
     </body>
