@@ -21,11 +21,10 @@ body {
 #hamburgerIcon {
     background-color: #344E41;
     color: white;
-    font-size: 3em; 
+    font-size: 4vw; 
     margin-top: -0.01%;
     margin-left: 13px;
     text-decoration: none;
-    transition: 0.3s;
     float: left;
     
 }
@@ -49,25 +48,42 @@ body {
     margin-top: -3px;
 }
 
-#navbar a {
+#normalLinks {
     text-decoration: none;
     color: white;
     font-family: 'Bebas Neue', 'cursive';
     font-size: 32px;
 }
 
-#navbar a:hover {
+#normalLinks:hover {
     text-shadow: 1px 1px 7px black;
     transition: 0.23s;
     font-size: 34px;
 }
+
+#dropdownLinks {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', 'cursive';
+    
+}
+
+#dropdownLinks:hover {
+    text-shadow: 1px 1px 7px black;
+    transition: 0.23s;
+    font-size: 26px;
+}
+
 
 #content {
     transition: margin-left 0.3s;
     padding:10px;
 }
 
-
+#dropLinks {
+    transition: margin-left 0.3s;
+}
 
 
 /*Main Page CSS */
@@ -77,9 +93,9 @@ body {
 @media screen and (min-width: 751px) {
     #textMainPage {
     font-family: Calibri;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     font-weight: 100;
-    color: #263826;
+    color: #0d120d;
     background-color: #588157;
     float: right;
     border-width: 2.25px;
@@ -103,7 +119,7 @@ body {
     font-family: Calibri;
     font-size: 3vw;
     font-weight: 100;
-    color: #263826;
+    color: #0d120d;
     background-color: #588157;
     border-width: 2.25px;
     border: #344E41;
@@ -154,12 +170,12 @@ body {
 #activeButtonTutorial a{
     background-color: #19251F; 
     padding-right: 49px;
-    padding-left: 26px;
+    padding-left: 14px;
 }
 
 #activeButtonTutorial a:hover {
-    padding-left: 24px;
-    padding-right: 46px;
+    padding-left: 11px;
+    padding-right: 49px;
     font-size: 34px;
 }
 
@@ -176,6 +192,7 @@ body {
     border-width: 2px;
     border: #344E41;
     border-style: solid;
+    color: #0d120d;
 }
 
 #code {
@@ -193,15 +210,28 @@ body {
     float:right;
     color: #263826;
     background-color: #588157;
-    border: #344E41;
-    border-style: solid; 
+    background-color: #2B3E2A;  
+    color: #A3B18A;
     padding: 2px;
+    user-select: none;
+    border: none;
+    font-size: 1.7vw;
+    transition: 0.2s;
 }
 
 #copyButton:hover {
-    background-color: #698F57;
+    font-size: 1.9vw;
 }
 
 #noSelect {
     user-select: none;
+}
+
+code {
+    color: black;
+    font-weight: bold;
+}
+
+#arrowhead {
+    font-weight: bolder;
 }

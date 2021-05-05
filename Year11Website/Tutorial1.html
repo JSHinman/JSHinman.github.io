@@ -1,6 +1,6 @@
 <html>
     <head>
-        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -17,18 +17,23 @@
     <body onload="alignText()">
         
         <header id="header">
-            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openClose()">☰</a>
+            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openCloseNav()">☰</a>
             <span id="title">Learn To Code</span>
         </header>
         
+        
+        
         <div id="navbar">
             <center>
-        <a href="index.html">Home</a>
-        <section id="activeButtonTutorial"><a href="CodeTutotialTemplate.html">Tutorials</a></section>
-        <a href="">The J Team</a>    
+                <a href="index.html" id="normalLinks">Home</a><br>
+                <a href="" id="normalLinks">The J Team</a> <br>
+                <section id="activeButtonTutorial"><a href="javascript:void(0)" id="normalLinks" onclick="openCloseLinks()">Tutorials <span id="arrowhead">&#708;</span></a></section>
+                <div id="dropLinks">
+                <a href="Tutorial1.html" id="dropdownLinks">Adding Motor</a><br>
+                <a href="Tutorial2.html" id="dropdownLinks">Button Press</a>
+                </div>
             </center>
         </div>
-        
         
         <div id="content">
             <br><br><br>
@@ -37,7 +42,7 @@
             To add a motor, you need to click on the Robot Configuration menu, which is at the top right of the screen next to the question mark. Then press Add a Device and select, motor. You can add any other sensor in this menu as well. Next, select the port number that you have plugged your motor into and name the motor. Usually, you would leave the gear cartridge settings unless you changed it inside the motor. After this, set it to either normal or reverse and press done. To spin the motor, the code would be: MotorName.spin(forward, 100, vex::velocityUnits::pct);. MotorName, you should change to the name of the motor that you set up earlier. Inside the brackets, there is the direction, then the power at which the motors would spin and what units the last number would be in, and in the case, percentage. Put this code inside the int main() function and below the vexCodeInit(). You then need to put it in a while loop so that the motor will keep spinning and set the while loop to keep spinning set the parameters to true(Make sure that true is lowercase). Your code should now look like this:
             </section><br>
             <section id="code">
-                <span id="noSelect">1.</span>&nbsp;int main() { <input type="image" src="images/clipboard.svg" onclick="copyText(Text)" id="copyButton"/>
+                <span id="noSelect">1.</span>&nbsp;int main() { <button onclick="copyText(Text)" id="copyButton"><i class="fa fa-clone" aria-hidden="true"></i></button><span id="copied">Copied!</span>
             <br><span id="noSelect">2.</span>&nbsp;&nbsp;&nbsp;&nbsp;// Initializing Robot Configuration. DO NOT REMOVE
             <br><span id="noSelect">3.</span>&nbsp;&nbsp;&nbsp;&nbsp;vexcodeInit();
             <br><span id="noSelect">4.</span>      
@@ -49,21 +54,24 @@
             </section>
             
             
-            
         </div>
         
         
         
         
-            
+            <!-- This is the code for my nav and for the copy and paste button -->
         <script>
             navBarSection = document.getElementById("navbar");
             contentSection = document.getElementById("content");
             var Text = "  int main() {\n      // Initializing Robot Configuration. DO NOT REMOVE\n      vexcodeInit();\n\n      while(true) {\n         NameOfMotor.spin(forward, 100, vex::velocityUnits::pct);\n      }\n   }"
+            arrow = document.getElementById("arrowhead");
             
             isOpen = false;
+            isOpenLinks = false;
             
-            function openClose() {
+            dropLinks = document.getElementById("dropLinks");
+            
+            function openCloseNav() {
                 if (isOpen == false) {
                     isOpen = true;
                     openNav();
@@ -73,6 +81,17 @@
                }
             }
             
+            function openCloseLinks() {
+                if (isOpenLinks == false) {
+                    isOpenLinks = true;
+                    openLinks();
+                } else {
+                    isOpenLinks = false;
+                    closeLinks();
+               }
+            }
+            
+            
             function openNav() {
                     navBarSection.style.width = "150px";
                     contentSection.style.marginLeft = "150px";
@@ -81,9 +100,24 @@
             function closeNav() {
                 navBarSection.style.width = "0";
                 contentSection.style.marginLeft = "7.2%";
+                dropLinks.style.display = "none";
+                isOpenLinks = false;
+                arrow.innerHTML = ("&#708;");
+            }
+            
+            function openLinks() {
+                dropLinks.style.display = "block";
+                arrow.innerHTML = ("&#709;");
+            }
+            
+            function closeLinks() {
+                dropLinks.style.display = "none";
+                arrow.innerHTML = ("&#708;");
+
             }
             
             function alignText() {
+                dropLinks.style.display = "none";
                 contentSection.style.marginLeft = "7.2%";
             }
 
@@ -95,6 +129,7 @@
                 elem.select();
                 document.execCommand('copy');
                 document.body.removeChild(elem);
+                alert("Copied");
             }
             
         </script>

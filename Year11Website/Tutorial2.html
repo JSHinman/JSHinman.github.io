@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        
+  
+        
+ 
+        <title>CBHS Robotics</title>
+    </head>
+    <body onload="alignText()">
+        
+        <header id="header">
+            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openCloseNav()">☰</a>
+            <span id="title">Learn To Code</span>
+        </header>
+        
+        <div id="navbar">
+            <center>
+                <a href="index.html" id="normalLinks">Home</a><br>
+                <a href="" id="normalLinks">The J Team</a> <br>
+                <section id="activeButtonTutorial"><a href="javascript:void(0)" id="normalLinks" onclick="openCloseLinks()">Tutorials <span id="arrowhead">&#708;</span></a></section>
+                <div id="dropLinks">
+                <a href="Tutorial1.html" id="dropdownLinks">Adding Motor</a><br>
+                <a href="Tutorial2.html" id="dropdownLinks">Button Press</a>
+                </div>
+            </center>
+        </div>
+        
+        
+        <div id="content">
+            
+            <br><br><br>
+            <h2 id="titleTutorials">Running Motor on Button Press</h2>
+            <section id="textTutorialPage" type="text">
+                The first thing you have to do is add the controller. Go into the robot configuration menu and select Add Device and then controller and wihtout changing anything, press done. Inside the <code>int main()</code> function, you need a while loop set to always active. To see if the button is being pressed, you need an if statement. Inside that you detect if a particular button is being pressed and if so run the motor. To also make the motor spin in reverse, put an else if after it and have it check if another button is being pressed. To make it stop after we let go of the buttons, is to have an else statement after the if statements. Put a <code>NameMotor.stop()</code> inside the else. This means that if neither of the buttons are being pressed, the motor will stop spinning.
+            </section><br>
+            <section id="code">
+                <span id="noSelect">1.</span>&nbsp;while(true) { <button onclick="copyText(Text)" id="copyButton"><i class="fa fa-clone" aria-hidden="true"></i></button>
+            <br><span id="noSelect">2.</span>&nbsp;&nbsp;&nbsp;&nbsp;if (Controller1.ButtonLeft.pressing()) {
+            <br><span id="noSelect">3.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NameOfMotor.spin(forward, 100, vex::velocityUnits::pct);
+            <br><span id="noSelect">4.</span>&nbsp;&nbsp;&nbsp;&nbsp;} if (Controller1.ButtonRight.pressing()) {
+            <br><span id="noSelect">5.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NameOfMotor.spin(reverse, 100, vex::velocityUnits::pct);
+            <br><span id="noSelect">6.</span>&nbsp;&nbsp;&nbsp;&nbsp;} else {
+            <br><span id="noSelect">7.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NameOfMotor.stop();
+            <br><span id="noSelect">8.</span>&nbsp;}
+            
+            </section>
+            
+            
+            
+        </div>
+        
+        
+          <!-- This is the code for my nav and for the copy and paste button -->
+            
+        <script>
+            navBarSection = document.getElementById("navbar");
+            contentSection = document.getElementById("content");
+            var Text = "while(true) {\n        if (Controller1.ButtonLeft.pressing()) {\n            NameOfMotor.spin(forward, 100, vex::velocityUnits::pct);\n        } if (Controller1.ButtonRight.pressing()) {\n            NameOfMotor.spin(reverse, 100, vex::velocityUnits::pct);\n        } else {\n          NameOfMotor.stop();\n        }"
+            arrow = document.getElementById("arrowhead");
+            
+            isOpen = false;
+            isOpenLinks = false;
+            
+            dropLinks = document.getElementById("dropLinks");
+            
+            function openCloseNav() {
+                if (isOpen == false) {
+                    isOpen = true;
+                    openNav();
+                } else {
+                    isOpen = false;
+                    closeNav();
+               }
+            }
+            
+            function openCloseLinks() {
+                if (isOpenLinks == false) {
+                    isOpenLinks = true;
+                    openLinks();
+                } else {
+                    isOpenLinks = false;
+                    closeLinks();
+               }
+            }
+            
+            
+            function openNav() {
+                    navBarSection.style.width = "150px";
+                    contentSection.style.marginLeft = "150px";
+            }
+            
+            function closeNav() {
+                navBarSection.style.width = "0";
+                contentSection.style.marginLeft = "7.2%";
+                dropLinks.style.display = "none";
+                isOpenLinks = false;
+                arrow.innerHTML= ("&#708;");
+            }
+            
+            function openLinks() {
+                dropLinks.style.display = "block";
+                arrow.innerHTML= ("&#709;");
+            }
+            
+            function closeLinks() {
+                dropLinks.style.display = "none";
+                arrow.innerHTML= ("&#708;");
+
+            }
+            
+            function alignText() {
+                dropLinks.style.display = "none";
+                contentSection.style.marginLeft = "7.2%";
+            }
+
+            
+            function copyText(text) {
+                const elem = document.createElement('textarea');
+                elem.value = text;
+                document.body.appendChild(elem);
+                elem.select();
+                document.execCommand('copy');
+                document.body.removeChild(elem);
+                alert("Copied");
+            }
+            
+        </script>
+    </body>
+</html>

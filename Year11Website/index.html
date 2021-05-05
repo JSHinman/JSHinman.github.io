@@ -14,15 +14,19 @@
     <body onload="fixCarousel()">
         
         <header id="header">
-            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openClose()">☰</a>
+            <a href="javascript:void(0)" id="hamburgerIcon" onclick="openCloseNav()">☰</a>
             <span id="title">CBHS ROBOTICS</span>
         </header>
         
         <div id="navbar">
             <center>
-        <section id="activeButtonIndex"><a href="">Home</a></section>
-        <a href="CodeTutotialTemplate.html">Tutorials</a><br>
-        <a href="">The J Team</a>    
+                <section id="activeButtonIndex"><a href="index.html" id="normalLinks">Home</a></section>
+                <a href="" id="normalLinks">The J Team</a> <br>
+                <a href="javascript:void(0)" id="normalLinks" onclick="openCloseLinks()">Tutorials 	<span id="arrowhead">&#708;</span></a>
+                <div id="dropLinks">
+                <a href="Tutorial1.html" id="dropdownLinks">Adding Motor</a><br>
+                <a href="Tutorial2.html" id="dropdownLinks">Button Press</a>
+                </div>
             </center>
         </div>
         
@@ -30,7 +34,7 @@
         <div id="content">
             <br><br><br>
             <section id="textMainPage">
-            Vex robotics is a competition for high schools. This involves designing, building, coding and driving robots. Each year their is a new game, where two robots on each team try to get the highest score. Last year the game was Change-up, a game where you had to score balls is small hoops as fast as possible. Robotics at CBHS is held after school everyday until around 4:30pm in F10.     
+            Vex robotics is a competition for high schools. This involves designing, building, coding and driving robots. Each year there is a new game, where two robots on each team try to get the highest score. Last year the game was Change-up, a game where you had to score balls is small hoops as fast as possible. Robotics at CBHS is held after school everyday until around 4:30pm in F10.     
             </section>
             <!-- Carousel -->
         <section id="carousel">
@@ -75,16 +79,31 @@
             contentSection = document.getElementById("content");
             carousel = document.getElementById("carousel");
             mainText = document.getElementById("textMainPage");
+            arrow = document.getElementById("arrowhead");
             
-            isOpen = false;
+            isOpenNav = false;
+            isOpenLinks = false;
             
-            function openClose() {
-                if (isOpen == false) {
-                    isOpen = true;
+            dropLinks = document.getElementById("dropLinks");
+            
+            
+            function openCloseNav() {
+                if (isOpenNav == false) {
+                    isOpenNav = true;
                     openNav();
                 } else {
-                    isOpen = false;
+                    isOpenNav = false;
                     closeNav();
+               }
+            }
+            
+            function openCloseLinks() {
+                if (isOpenLinks == false) {
+                    isOpenLinks = true;
+                    openLinks();
+                } else {
+                    isOpenLinks = false;
+                    closeLinks();
                }
             }
             
@@ -98,14 +117,28 @@
                 navBarSection.style.width = "0";
                 contentSection.style.marginLeft = "0";
                 mainText.style.marginRight = "10.58%";
+                dropLinks.style.display = "none";
+                isOpenLinks = false;
+                arrow.innerHTML = ("&#708;");
+            }
+            
+            function openLinks() {
+                arrow.innerHTML = ("&#709;");
+                dropLinks.style.display = "block";
+            }
+            
+            function closeLinks() {
+                arrow.innerHTML = ("&#708;");
+                dropLinks.style.display = "none";
+
             }
             
             function fixCarousel() {
-                
+                dropLinks.style.display = "none";
                 mainText.style.marginRight = "10.58%";
             }
             
-
+            
             
         </script>
     </body>
