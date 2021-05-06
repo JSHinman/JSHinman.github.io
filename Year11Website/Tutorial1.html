@@ -36,13 +36,20 @@
         </div>
         
         <div id="content">
+            
             <br><br><br>
             <h2 id="titleTutorials">Adding a motor</h2>
             <section id="textTutorialPage" type="text">
             To add a motor, you need to click on the Robot Configuration menu, which is at the top right of the screen next to the question mark. Then press Add a Device and select, motor. You can add any other sensor in this menu as well. Next, select the port number that you have plugged your motor into and name the motor. Usually, you would leave the gear cartridge settings unless you changed it inside the motor. After this, set it to either normal or reverse and press done. To spin the motor, the code would be: MotorName.spin(forward, 100, vex::velocityUnits::pct);. MotorName, you should change to the name of the motor that you set up earlier. Inside the brackets, there is the direction, then the power at which the motors would spin and what units the last number would be in, and in the case, percentage. Put this code inside the int main() function and below the vexCodeInit(). You then need to put it in a while loop so that the motor will keep spinning and set the while loop to keep spinning set the parameters to true(Make sure that true is lowercase). Your code should now look like this:
             </section><br>
             <section id="code">
-                <span id="noSelect">1.</span>&nbsp;int main() { <button onclick="copyText(Text)" id="copyButton"><i class="fa fa-clone" aria-hidden="true"></i></button><span id="copied">Copied!</span>
+                <span id="noSelect">1.</span>&nbsp;int main() {
+                <div class="copyTextDiv">
+                    <button onclick="copyText(Text)" onmouseout="hideCopiedText()" id="copyButton">
+                        <span class="copied" id="copiedID">Copied!</span>
+                        <span id="copyIcon"><i class="fa fa-clone" aria-hidden="true"></i></span></button>
+                </div>  
+                
             <br><span id="noSelect">2.</span>&nbsp;&nbsp;&nbsp;&nbsp;// Initializing Robot Configuration. DO NOT REMOVE
             <br><span id="noSelect">3.</span>&nbsp;&nbsp;&nbsp;&nbsp;vexcodeInit();
             <br><span id="noSelect">4.</span>      
@@ -129,7 +136,16 @@
                 elem.select();
                 document.execCommand('copy');
                 document.body.removeChild(elem);
-                alert("Copied");
+                
+                var copiedText = document.getElementById("copiedID");
+                copiedText.style.visibility = "visible";
+                copiedText.style.opacity = "1";
+            }
+            
+            function hideCopiedText() {
+                var tooltip = document.getElementById("copiedID");
+                tooltip.style.visibility = "hidden";
+                tooltip.style.opacity = "0";
             }
             
         </script>

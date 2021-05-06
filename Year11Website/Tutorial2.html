@@ -42,7 +42,12 @@
                 The first thing you have to do is add the controller. Go into the robot configuration menu and select Add Device and then controller and wihtout changing anything, press done. Inside the <code>int main()</code> function, you need a while loop set to always active. To see if the button is being pressed, you need an if statement. Inside that you detect if a particular button is being pressed and if so run the motor. To also make the motor spin in reverse, put an else if after it and have it check if another button is being pressed. To make it stop after we let go of the buttons, is to have an else statement after the if statements. Put a <code>NameMotor.stop()</code> inside the else. This means that if neither of the buttons are being pressed, the motor will stop spinning.
             </section><br>
             <section id="code">
-                <span id="noSelect">1.</span>&nbsp;while(true) { <button onclick="copyText(Text)" id="copyButton"><i class="fa fa-clone" aria-hidden="true"></i></button>
+                <span id="noSelect">1.</span>&nbsp;while(true) {
+                <div class="copyTextDiv">
+                    <button onclick="copyText(Text)" onmouseout="hideCopiedText()" id="copyButton">
+                        <span class="copied" id="copiedID">Copied!</span>
+                        <span id="copyIcon"><i class="fa fa-clone" aria-hidden="true"></i></span></button>
+                </div>  
             <br><span id="noSelect">2.</span>&nbsp;&nbsp;&nbsp;&nbsp;if (Controller1.ButtonLeft.pressing()) {
             <br><span id="noSelect">3.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NameOfMotor.spin(forward, 100, vex::velocityUnits::pct);
             <br><span id="noSelect">4.</span>&nbsp;&nbsp;&nbsp;&nbsp;} if (Controller1.ButtonRight.pressing()) {
@@ -129,7 +134,15 @@
                 elem.select();
                 document.execCommand('copy');
                 document.body.removeChild(elem);
-                alert("Copied");
+                var copiedText = document.getElementById("copiedID");
+                copiedText.style.visibility = "visible";
+                copiedText.style.opacity = "1";
+            }
+            
+            function hideCopiedText() {
+                var tooltip = document.getElementById("copiedID");
+                tooltip.style.visibility = "hidden";
+                tooltip.style.opacity = "0";
             }
             
         </script>

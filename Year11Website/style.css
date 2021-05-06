@@ -215,13 +215,14 @@ body {
     padding: 2px;
     user-select: none;
     border: none;
-    font-size: 1.7vw;
     transition: 0.2s;
+    cursor: pointer;
+    outline: none;
+    
 }
 
-#copyButton:hover {
-    font-size: 1.9vw;
-}
+
+
 
 #noSelect {
     user-select: none;
@@ -234,4 +235,52 @@ code {
 
 #arrowhead {
     font-weight: bolder;
+}
+
+
+.copyTextDiv {
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.copyTextDiv .copied {
+  
+    width: 90px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    
+    /* Positioning */
+    position: absolute;
+    bottom: 130%;  
+    margin-left: -33px;
+
+    /* Hidden until button click */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+/* Arrow underneath tooltip */
+.copyTextDiv .copied::after {
+    content: "";
+    position: absolute;
+    margin-top: 29px;
+    margin-left: -40px;
+    border-width: 5px;
+    /* makes it into triangle */
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+#copyIcon {
+    font-size:1.7vw;
+}
+
+#copyIcon:hover {
+    font-size:1.9vw;
 }
